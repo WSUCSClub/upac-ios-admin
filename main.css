@@ -1,0 +1,53 @@
+/* Global */
+* {
+  transition-duration: .1s;
+}
+
+html * {
+	margin: 0;
+}
+
+body {
+	font-family: helvetica-neue,helvetica,arial,sans-serif;
+}
+
+a {
+}
+
+a:hover, a:focus, a:active  {
+}
+
+.clear {
+  clear: both;
+}
+
+#page_content {
+}
+
+/* Header */
+header {
+}
+
+header h1 {
+}
+
+nav ul {
+  list-style-type: none;
+  float: right;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+}
+
+nav a:hover {
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+}
+
