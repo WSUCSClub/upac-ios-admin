@@ -1,3 +1,8 @@
+<?php
+//include_once('../cgi-bin/mysql_connect.php');
+session_start();
+include_once('fb_helper.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

@@ -1,11 +1,11 @@
 <?php
     $page_title = 'Users';
-    include('header.inc');
+    include('header.php');
 ?>
 
 <h1>Edit Users</h1>
 
 <p>some users.</p>
 
-<?php include('footer.inc'); ?>
+<?php include('footer.php'); ?>
 
