@@ -8,19 +8,23 @@
 
 <h1>Edit Raffles</h1>
 
-<p>Hello, world.</p>
-
 <?php
     try {
       $events = (new FacebookRequest(
         $session,
         'GET',
-        '/322196472693/events'
+        '/322196472693/events',
+        [ "since" => (getdate()[0] - 5000000) ] // get max events since 2 months ago
       ))->execute()->getGraphObject();
 
-      var_dump($events);
-      for ($i = 0; $i < sizeof($events->getPropertyNames()); $i++) {
-        echo $events->getPropertyNames()[$i] . '<br/>';
+      //var_dump($events);
+
+      for ($i = 0; $i < sizeof($events->getProperty('data')->getPropertyNames()); $i++) {
+        echo $events->getPropertyAsArray('data')[$i]->getProperty('id') . '<br/>';
+        echo $events->getPropertyAsArray('data')[$i]->getProperty('name') . '<br/>';
+        echo $events->getPropertyAsArray('data')[$i]->getProperty('location') . '<br/>';
+        echo $events->getPropertyAsArray('data')[$i]->getProperty('start_time');
+        echo '<br/><br/>';
       }
 
     } catch (FacebookRequestException $e) {
