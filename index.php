@@ -17,21 +17,38 @@
         "since" => (getdate()[0] - 5000000) ] // get max events since 2 months ago
       ))->execute()->getGraphObject();
 
-      //var_dump($events);
-
       for ($i = 0; $i < sizeof($events->getProperty('data')->getPropertyNames()); $i++) {
         $id       = $events->getPropertyAsArray('data')[$i]->getProperty('id'); 
         $name     = $events->getPropertyAsArray('data')[$i]->getProperty('name'); 
         $location = $events->getPropertyAsArray('data')[$i]->getProperty('location'); 
         $date     = $events->getPropertyAsArray('data')[$i]->getProperty('start_time'); 
         $pic      = $events->getPropertyAsArray('data')[$i]->getProperty('cover')->getProperty('source'); 
+
+        // Check if event has a raffle
+        $hasRaffle = '';
+        if ($hasRaffle != '') {
+          $hasRaffle = 'hasRaffle';
+        }
 ?>
 
-<li id="<?=$id?>">
+<li id="<?=$id?>" class="<?=$hasRaffle?>">
+  <?php if ($hasRaffle != '') { ?>
+  <div class="raffle yesRaffle">
+    <div class="delete">delete</div>
+    <div class="draw">draw</div>
+    <div class="contestants">3</div>
+  </div>
+  <?php } else { ?>
+    <div class="raffle noRaffle">
+      <div>create</div>
+    </div>
+  <?php } ?>
+
   <img src="<?=$pic?>" alt="" />
   <h3><?=$name?></h3>
   <h4><?=$location?></h4>
   <h4><?=$date?></h4>
+
   <div style="clear:both;"></div>
 </li>
 
