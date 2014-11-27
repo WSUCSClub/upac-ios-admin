@@ -14,13 +14,9 @@
   <h1>Winners</h1>
 
   <ol>
-    <li>asff</li>
-    <li>asff</li>
-    <li>asff</li>
-    <li>asff</li>
   </ol>
 
-  <div id="closeButton" onclick="$('#winners').toggle(); $('#shade').toggle();">Got 'em!</div>
+  <div id="close" class="button" onclick="$('#winners').toggle(); $('#shade').toggle();">Got 'em!</div>
 </div>
 
 <ul id="events">
@@ -46,9 +42,7 @@
 
         $raffleQuery = new ParseQuery('Raffle');
         $raffleQuery->equalTo('eventId', $id);
-
         $raffle = $raffleQuery->first();
-        //var_dump($raffle);
 
         if ($raffle != []) {
           $hasRaffle = 'hasRaffle';
@@ -73,9 +67,12 @@
     </div>
 
     <div class="raffle yesRaffle">
-      <div class="delete">delete</div>
-      <div class="draw" onclick="drawWinners('<?=$id?>');">draw</div>
-      <div class="contestants"><input type="number" value="2" size="2" /> of <?=$numContestants?></div>
+      <div class="contestants">
+        <span class="draw button" onclick="drawWinners('<?=$id?>');">Draw</span>
+        <input type="number" value="2" size="2" />
+        of <?=$numContestants?>
+      </div>
+      <div class="delete button">Delete</div>
     </div>
 
   <?php } else { ?>
