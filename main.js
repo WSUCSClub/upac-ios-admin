@@ -2,13 +2,42 @@ window.onload = function() {
   //
 }
 
-function drawWinners(id) {
+function getEntries(id) {
   var entries = [];
 
   $('#E' + id).children('span').each(function() {
     entries.push($(this).text());
   });
 
-  alert(entries);
+  return entries;
+}
+
+function drawWinners(id, numWinners) {
+  var entries = getEntries(id);
+  var winners = [];
+
+  var i = 0;
+  while (i < numWinners && i < entries.length && entries.length > 0) {
+    ++i;
+
+    var random = Math.round(Math.random() * 1000) % entries.length;
+    var possibleWinner = entries[random];
+
+    // Make sure entry isn't already a winner
+    var alreadyWon = false;
+    for (var j = 0; j < winners.length; j++) {
+      if (possibleWinner == winners[j]) {
+        alreadyWon = true;
+        --i;
+        break;
+      }
+    }
+
+    if (!alreadyWon) {
+      winners.push(possibleWinner);
+    }
+  }
+
+  alert(winners);
 }
 

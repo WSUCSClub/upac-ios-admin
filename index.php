@@ -61,7 +61,7 @@
 
   <div class="raffle yesRaffle">
     <div class="delete">delete</div>
-    <div class="draw" onclick="drawWinners('<?=$id?>');">draw</div>
+    <div class="draw" onclick="drawWinners('<?=$id?>', 2);">draw</div>
     <div class="contestants"><?=$numContestants?></div>
   </div>
 
