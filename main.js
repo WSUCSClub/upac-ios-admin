@@ -38,6 +38,15 @@ function drawWinners(id, numWinners) {
     }
   }
 
-  alert(winners);
+  // Display winners
+  $('#winners').toggle();
+  $('#shade').toggle();
+
+  var list = $('#winners').children('ol').first();
+  list.empty();
+  
+  for (i = 0; i < winners.length; i++) {
+    list.append('<li>' + winners[i] + '</li>');
+  }
 }
 

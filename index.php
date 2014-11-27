@@ -10,6 +10,19 @@
     use Parse\ParseQuery;
 ?>
 
+<div id="winners">
+  <h1>Winners</h1>
+
+  <ol>
+    <li>asff</li>
+    <li>asff</li>
+    <li>asff</li>
+    <li>asff</li>
+  </ol>
+
+  <div id="closeButton" onclick="$('#winners').toggle(); $('#shade').toggle();">Got 'em!</div>
+</div>
+
 <ul id="events">
 <?php
     try {

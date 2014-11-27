@@ -18,6 +18,7 @@ include_once('parse_helper.php');
     <?php if (isset($miscellaneous)) echo $miscellaneous; ?>
   </head>
   <body>
+    <div id="shade"></div>
     <div id="container">
       <header>
         <div id="logo">
