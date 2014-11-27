@@ -16,14 +16,19 @@ include_once('fb_helper.php');
     <?php if (isset($miscellaneous)) echo $miscellaneous; ?>
   </head>
   <body>
-    <header>
-      <h1>WSU UPAC App Administration</h1>
-      <nav>
-        <ul>
-          <li><a href="index.php">Raffles</a></li>
-          <li><a href="board_members.php">Board Members</a></li>
-          <li><a href="users.php">Users</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div id="page_content">
+    <div id="container">
+      <header>
+        <div id="logo">
+          <img src="wsu_logo.png" alt="WSU" />
+          <h1>WSU UPAC App Administration</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.php">Raffles</a></li>
+            <li><a href="board_members.php">Board Members</a></li>
+            <li><a href="users.php">Admins</a></li>
+          </ul>
+        </nav>
+        <div style="clear:both;"></div>
+      </header>
+      <main>

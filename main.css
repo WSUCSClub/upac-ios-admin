@@ -9,6 +9,10 @@ html * {
 
 body {
 	font-family: helvetica-neue,helvetica,arial,sans-serif;
+  background-color: #ccc;
+}
+
+#container {
 }
 
 a {
@@ -21,33 +25,114 @@ a:hover, a:focus, a:active  {
   clear: both;
 }
 
-#page_content {
-}
-
 /* Header */
 header {
+  width: 80%;
+  margin: 0px auto;
+  padding: 20px 10%;
+  background-color: #4b2f6a;
+}
+
+#logo {
+  float: left;
+}
+
+#logo img {
+  float: left;
+  height: 100px;
 }
 
 header h1 {
+  float: left;
+  margin: 50px 0px 0px 20px;
+  color: #fff;
+  text-transform: uppercase;
+  
 }
 
 nav ul {
-  list-style-type: none;
   float: right;
+  margin-top: 60px;
+  list-style-type: none;
 }
 
 nav li {
   display: inline-block;
+  padding-right: 30px;
+}
+
+nav li:hover {
+  transform: scale(1.2) rotate(4deg);
+  -webkit-transform: scale(1.2) rotate(4deg);
+  -moz-transform: scale(1.2) rotate(4deg);
+  -o-transform: scale(1.2) rotate(4deg);
+  -ms-transform: scale(1.2) rotate(4deg);
 }
 
 nav a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: lowercase;
 }
 
 nav a:hover {
-  font-weight: bold;
+  //text-transform: uppercase;
+}
+
+/* Main */
+main {
+  clear: both;
+  padding: 50px 0px;
+}
+
+#events {
+  list-style-type: none;
+  padding: 0px;
+}
+
+#events li {
+  width: 80%;
+  padding: 20px 10%;
+  border-top: 1px dotted #333;
+}
+
+#events li:last-child {
+  border-bottom: 1px dotted #333;
+}
+
+#events li:hover {
+  background-color: #ddd;
+}
+
+#events h3 {
+  margin-top: 20px;
+}
+
+#events h4 {
+  font-weight: normal;
+}
+
+#events img {
+  float: left;
+  margin-right: 20px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #333;
+  border-radius: 55px;
 }
 
 /* Footer */
 footer {
+  width: 80%;
+  margin: 0px auto;
+  padding: 20px 10%;
+  background-color: #4b2f6a;
+  color: #fff;
+  font-size: small;
+  text-align: center;
+}
+
+footer a {
+  color: #aaa;
 }
 
