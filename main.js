@@ -51,3 +51,21 @@ function drawWinners(id) {
   }
 }
 
+function createRaffle(id) {
+  var TestObject = Parse.Object.extend("TestObject");
+  var testObject = new TestObject();
+  testObject.save({foo: "bar"}).then(function(object) {
+      alert("yay! it worked");
+  });
+}
+
+function deleteRaffle(id) {
+  // prompt for user verification
+  
+  // delete from parse
+  
+  alert('deleted ' + id);
+
+  // refresh page
+}
+

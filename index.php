@@ -72,12 +72,12 @@
         <input type="number" value="2" size="2" />
         of <?=$numContestants?>
       </div>
-      <div class="delete button">Delete</div>
+      <div class="delete button" onclick="deleteRaffle('<?=$id?>');">Delete</div>
     </div>
 
   <?php } else { ?>
     <div class="raffle noRaffle">
-      <div>create</div>
+    <div class="create button" onclick="createRaffle('<?=$id?>');">Create Raffle</div>
     </div>
   <?php } ?>
 

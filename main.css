@@ -62,11 +62,11 @@ nav li {
 }
 
 nav li:hover {
-  transform: scale(1.2) rotate(4deg);
-  -webkit-transform: scale(1.2) rotate(4deg);
-  -moz-transform: scale(1.2) rotate(4deg);
-  -o-transform: scale(1.2) rotate(4deg);
-  -ms-transform: scale(1.2) rotate(4deg);
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  -ms-transform: scale(1.3);
 }
 
 nav a {
@@ -147,7 +147,7 @@ main {
   background-color: #cc4;
 }
 
-.draw {
+.draw, .create {
   background-color: #4b4;
 }
 
