@@ -5,15 +5,16 @@ window.onload = function() {
 function getEntries(id) {
   var entries = [];
 
-  $('#E' + id).children('span').each(function() {
+  $('#' + id).children('.entries').first().children('span').each(function() {
     entries.push($(this).text());
   });
 
   return entries;
 }
 
-function drawWinners(id, numWinners) {
+function drawWinners(id) {
   var entries = getEntries(id);
+  var numWinners = $('#' + id).children('.raffle').first().children('.contestants').first().children('input').first().val();
   var winners = [];
 
   var i = 0;

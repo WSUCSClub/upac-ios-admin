@@ -59,24 +59,24 @@
 
 <li id="<?=$id?>" class="<?=$hasRaffle?>">
   <?php if ($hasRaffle != '') { ?>
-  <!-- Place for JS to access data pulled from Parse via PHP -->
-  <div id="E<?=$id?>" style="display: none;">
-  <?php
-        if ($numContestants > 0) {
-          foreach ($entries as &$entry) {
-            echo '<span>' . $entry . '</span><br/>';
+    <!-- Place for JS to access data pulled from Parse via PHP -->
+    <div class="entries" style="display: none;">
+    <?php
+          if ($numContestants > 0) {
+            foreach ($entries as &$entry) {
+              echo '<span>' . $entry . '</span><br/>';
+            }
+
+            unset($entry);
           }
+    ?>
+    </div>
 
-          unset($entry);
-        }
-  ?>
-  </div>
-
-  <div class="raffle yesRaffle">
-    <div class="delete">delete</div>
-    <div class="draw" onclick="drawWinners('<?=$id?>', 2);">draw</div>
-    <div class="contestants"><?=$numContestants?></div>
-  </div>
+    <div class="raffle yesRaffle">
+      <div class="delete">delete</div>
+      <div class="draw" onclick="drawWinners('<?=$id?>');">draw</div>
+      <div class="contestants"><input type="number" value="2" size="2" /> of <?=$numContestants?></div>
+    </div>
 
   <?php } else { ?>
     <div class="raffle noRaffle">

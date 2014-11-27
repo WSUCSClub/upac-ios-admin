@@ -133,6 +133,10 @@ main {
   float: right;
 }
 
+.contestants input {
+  width: 40px;
+}
+
 #shade {
   display: none;
   z-index: 999;
