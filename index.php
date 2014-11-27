@@ -34,7 +34,11 @@
         $id       = $events->getPropertyAsArray('data')[$i]->getProperty('id'); 
         $name     = $events->getPropertyAsArray('data')[$i]->getProperty('name'); 
         $location = $events->getPropertyAsArray('data')[$i]->getProperty('location'); 
+
         $date     = $events->getPropertyAsArray('data')[$i]->getProperty('start_time'); 
+        
+        $timestamp = strtotime($date);
+
         $pic      = $events->getPropertyAsArray('data')[$i]->getProperty('cover')->getProperty('source'); 
 
         // Check if event has a raffle
@@ -84,7 +88,7 @@
   <img src="<?=$pic?>" alt="" />
   <h3><?=$name?></h3>
   <h4><?=$location?></h4>
-  <h4><?=$date?></h4>
+  <h4 class="date" title="<?=$timestamp?>"><?=$date?></h4>
 
   <div style="clear:both;"></div>
 </li>

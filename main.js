@@ -52,10 +52,25 @@ function drawWinners(id) {
 }
 
 function createRaffle(id) {
-  var TestObject = Parse.Object.extend("TestObject");
-  var testObject = new TestObject();
-  testObject.save({foo: "bar"}).then(function(object) {
-    alert("yay! it worked");
+  var date = new Date();
+
+  var phpDate = $('#' + id).children('.date').first().attr('title');
+  var endDate = new Date((+phpDate + 86400) * 1000); // Add 1 day to start
+
+  var Raffle = Parse.Object.extend("Raffle");
+  var raffle = new Raffle();
+  raffle.set("eventId", id);
+  raffle.set("date", date);
+  raffle.set("endDate", endDate);
+
+
+  raffle.save(null, {
+    success: function(result) {
+               location.reload();
+             },
+    error: function(result, error) {
+             alert('Failed to create new object, with error code: ' + error.message);
+           }
   });
 }
 
@@ -70,21 +85,21 @@ function deleteRaffle(id) {
     query.first({
 
       success: function(raffle) {
-        raffle.destroy({
-          success: function(result) {
-             location.reload();
-          },
+                 raffle.destroy({
+                   success: function(result) {
+                              location.reload();
+                            },
 
-          error: function(result, error) {
-            alert('Sorry, couldn\'t delete that raffle.\n\n' + error);
-          }
-        });
+                   error: function(result, error) {
+                            alert('Sorry, couldn\'t delete that raffle.\n\n' + error);
+                          }
+                 });
 
-      },
+               },
 
       error: function(raffle) {
-        alert('Sorry, couldn\'t find that raffle.');
-      }
+               alert('Sorry, couldn\'t find that raffle.');
+             }
 
     });
   }
