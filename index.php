@@ -10,13 +10,13 @@
     use Parse\ParseQuery;
 ?>
 
-<div id="winners">
+<div id="modal">
   <h1>Winners</h1>
 
   <ol>
   </ol>
 
-  <div id="close" class="button" onclick="$('#winners').toggle(); $('#shade').toggle();">Got 'em!</div>
+  <div class="red button bigButton" onclick="$('#modal').toggle(); $('#shade').toggle();">Got 'em!</div>
 </div>
 
 <ul id="mainList">

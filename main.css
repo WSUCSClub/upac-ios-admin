@@ -139,6 +139,11 @@ main {
   background-color: #cc4;
 }
 
+.bigButton {
+  padding: 10px 0px;
+  margin-bottom: 5px;
+}
+
 .green{
   background-color: #4b4;
 }
@@ -160,15 +165,6 @@ main {
   opacity: 0.7;
 }
 
-#close {
-  background-color: #f44;
-  padding: 10px 0px;
-}
-
-#close:hover {
-  background-color: #cc4;
-}
-
 /* Raffles */
 #mainList li.hasRaffle {
   background-color: #cfafef;
@@ -183,7 +179,7 @@ main {
   height: 25px;
 }
 
-#winners {
+#modal {
   display: none;
   z-index: 1000;
   position: fixed;
@@ -194,13 +190,14 @@ main {
   text-align: center;
 }
 
-#winners h1 {
+#modal h1 {
   text-transform: uppercase;
 }
 
-#winners ol {
+#modal ol {
   margin: 30px 0px;
 }
+
 
 /* Board Members */
 #addMember {
@@ -208,6 +205,16 @@ main {
   text-align: center;
   margin: 30px auto;
   padding: 15px 0px;
+}
+
+#modal #form {
+  margin: 30px 0px;
+  text-align: right;
+}
+
+#modal #form input {
+  margin-left: 20px;
+  margin-bottom: 2px;
 }
 
 /* Footer */

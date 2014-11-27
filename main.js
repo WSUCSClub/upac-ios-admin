@@ -40,10 +40,10 @@ function drawWinners(id) {
   }
 
   // Display winners
-  $('#winners').toggle();
+  $('#modal').toggle();
   $('#shade').toggle();
 
-  var list = $('#winners').children('ol').first();
+  var list = $('#modal').children('ol').first();
   list.empty();
 
   for (i = 0; i < winners.length; i++) {
@@ -112,6 +112,8 @@ function deleteMember(name) {
 }
 
 function addMember() {
+  //$('#modal').toggle();
+  //$('#shade').toggle();
   alert('adding member');
 }
 
