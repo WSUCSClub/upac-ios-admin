@@ -45,7 +45,7 @@ function drawWinners(id) {
 
   var list = $('#winners').children('ol').first();
   list.empty();
-  
+
   for (i = 0; i < winners.length; i++) {
     list.append('<li>' + winners[i] + '</li>');
   }
@@ -55,17 +55,50 @@ function createRaffle(id) {
   var TestObject = Parse.Object.extend("TestObject");
   var testObject = new TestObject();
   testObject.save({foo: "bar"}).then(function(object) {
-      alert("yay! it worked");
+    alert("yay! it worked");
   });
 }
 
 function deleteRaffle(id) {
-  // prompt for user verification
-  
-  // delete from parse
-  
-  alert('deleted ' + id);
+  // Prompt for user verification
+  if (confirm('Are you sure you want to delete this raffle and all of it\'s participants?')) {
 
-  // refresh page
+    // Delete from Parse
+    var Raffle = Parse.Object.extend('Raffle');
+    var query = new Parse.Query(Raffle);
+    query.equalTo('eventId', id);
+    query.first({
+
+      success: function(raffle) {
+        raffle.destroy({
+          success: function(result) {
+             location.reload();
+          },
+
+          error: function(result, error) {
+            alert('Sorry, couldn\'t delete that raffle.\n\n' + error);
+          }
+        });
+
+      },
+
+      error: function(raffle) {
+        alert('Sorry, couldn\'t find that raffle.');
+      }
+
+    });
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
 
