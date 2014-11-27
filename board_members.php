@@ -6,7 +6,7 @@
     use Parse\ParseQuery;
 ?>
 
-<div id="addMember" class="green button" onclick="$('#modal').toggle();$('#shade').toggle();">Add Member</div>
+<div class="green button centerButton" onclick="$('#modal').toggle();$('#shade').toggle();">Add Member</div>
 
 <div id="modal">
   <h1>Add Member</h1>

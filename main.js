@@ -179,6 +179,77 @@ function validateMember(name, position, email, pictureControl) {
 }
 
 
+function deleteUser(email) {
+  // Prompt for user verification
+  if (confirm('Are you sure you want to delete this user?')) {
+
+    // Delete from Parse
+    var User = Parse.Object.extend('_User');
+    var query = new Parse.Query(User);
+    query.equalTo('email', email);
+    query.first({
+
+      success: function(user) {
+                 user.destroy({
+                   success: function(result) {
+                              location.reload();
+                            },
+
+                   error: function(result, error) {
+                            alert('Sorry, couldn\'t delete that user.\n\n' + error);
+                          }
+                 });
+
+               },
+
+      error: function(user) {
+               alert('Sorry, couldn\'t find that user.');
+             }
+    });
+  }
+
+}
+
+function addUser() {
+  var email = $('#email').val();
+  var pass = $('#pass').val();
+  var confirmPass = $('#confirmPass').val();
+
+  if (validateUser(email, pass, confirmPass)) {
+    // Add to parse
+    var user = new Parse.User();
+    user.set("username", email);
+    user.set("email", email);
+    user.set("password", pass);
+
+    user.signUp(null, {
+      success: function(result) {
+                 location.reload();
+               },
+      error: function(result, error) {
+               alert('Failed to create new member, with error code: ' + error.message);
+             }
+    });
+  }
+}
+
+function validateUser(email, pass, confirmPass) {
+  var valid = false;
+  
+  if (email != '' && pass != '' && confirmPass != '') {
+    if (pass == confirmPass) {
+      valid = true;
+    } else {
+      alert('The passwords do not match.');
+    }
+  } else {
+    alert('Please fill in all the information.');
+  }
+
+  return valid;
+}
+
+
 
 
 
