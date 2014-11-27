@@ -19,7 +19,7 @@
   <div id="close" class="button" onclick="$('#winners').toggle(); $('#shade').toggle();">Got 'em!</div>
 </div>
 
-<ul id="events">
+<ul id="mainList">
 <?php
     try {
       $events = (new FacebookRequest(
@@ -70,18 +70,18 @@
     ?>
     </div>
 
-    <div class="raffle yesRaffle">
+    <div class="actions yesRaffle">
       <div class="contestants">
-        <span class="draw button" onclick="drawWinners('<?=$id?>');">Draw</span>
+        <span class="green button" onclick="drawWinners('<?=$id?>');">Draw</span>
         <input type="number" value="2" size="2" />
         of <?=$numContestants?>
       </div>
-      <div class="delete button" onclick="deleteRaffle('<?=$id?>');">Delete</div>
+      <div class="red button" onclick="deleteRaffle('<?=$id?>');">Delete</div>
     </div>
 
   <?php } else { ?>
-    <div class="raffle noRaffle">
-    <div class="create button" onclick="createRaffle('<?=$id?>');">Create Raffle</div>
+    <div class="actions noRaffle">
+    <div class="green button" onclick="createRaffle('<?=$id?>');">Create Raffle</div>
     </div>
   <?php } ?>
 

@@ -84,43 +84,35 @@ main {
   clear: both;
 }
 
-#events {
+#mainList {
   list-style-type: none;
   padding: 0px;
 }
 
-#events li {
+#mainList li {
   width: 80%;
   padding: 20px 10%;
   border-top: 1px dotted #333;
 }
 
-#events li.hasRaffle {
-  background-color: #cfafef;
-}
-
-#events li.hasRaffle:hover {
-  background-color: #efcfff;
-}
-
-#events li:first-child {
+#mainList li:first-child {
   border-top: none;
 }
 
-#events li:hover {
+#mainList li:hover {
   background-color: #ddd;
 }
 
-#events h3 {
+#mainList h3 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-#events h4 {
+#mainList h4 {
   font-weight: normal;
 }
 
-#events img {
+#mainList img {
   float: left;
   margin-right: 20px;
   width: 100px;
@@ -129,7 +121,7 @@ main {
   border-radius: 55px;
 }
 
-.raffle {
+.actions {
   float: right;
 }
 
@@ -147,17 +139,12 @@ main {
   background-color: #cc4;
 }
 
-.draw, .create {
+.green{
   background-color: #4b4;
 }
 
-.delete {
+.red {
   background-color: #f44;
-}
-
-.contestants input {
-  width: 40px;
-  height: 25px;
 }
 
 #shade {
@@ -171,6 +158,29 @@ main {
   overflow: hidden;
   background-color: #000;
   opacity: 0.7;
+}
+
+#close {
+  background-color: #f44;
+  padding: 10px 0px;
+}
+
+#close:hover {
+  background-color: #cc4;
+}
+
+/* Raffles */
+#mainList li.hasRaffle {
+  background-color: #cfafef;
+}
+
+#mainList li.hasRaffle:hover {
+  background-color: #efcfff;
+}
+
+.contestants input {
+  width: 40px;
+  height: 25px;
 }
 
 #winners {
@@ -192,13 +202,12 @@ main {
   margin: 30px 0px;
 }
 
-#close {
-  background-color: #f44;
-  padding: 10px 0px;
-}
-
-#close:hover {
-  background-color: #cc4;
+/* Board Members */
+#addMember {
+  width: 300px;
+  text-align: center;
+  margin: 30px auto;
+  padding: 15px 0px;
 }
 
 /* Footer */

@@ -14,7 +14,7 @@ function getEntries(id) {
 
 function drawWinners(id) {
   var entries = getEntries(id);
-  var numWinners = $('#' + id).children('.raffle').first().children('.contestants').first().children('input').first().val();
+  var numWinners = $('#' + id).children('.actions').first().children('.contestants').first().children('input').first().val();
   var winners = [];
 
   var i = 0;
@@ -106,9 +106,14 @@ function deleteRaffle(id) {
 
 }
 
+function deleteMember(name) {
+  alert('deleted ' + name);
+  location.reload();
+}
 
-
-
+function addMember() {
+  alert('adding member');
+}
 
 
 
