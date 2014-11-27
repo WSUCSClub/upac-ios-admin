@@ -107,8 +107,34 @@ function deleteRaffle(id) {
 }
 
 function deleteMember(name) {
-  alert('deleted ' + name);
-  location.reload();
+  // Prompt for user verification
+  if (confirm('Are you sure you want to delete this board member?')) {
+
+    // Delete from Parse
+    var Member = Parse.Object.extend('Member');
+    var query = new Parse.Query(Member);
+    query.equalTo('name', name);
+    query.first({
+
+      success: function(member) {
+                 member.destroy({
+                   success: function(result) {
+                              location.reload();
+                            },
+
+                   error: function(result, error) {
+                            alert('Sorry, couldn\'t delete that member.\n\n' + error);
+                          }
+                 });
+
+               },
+
+      error: function(member) {
+               alert('Sorry, couldn\'t find that member.');
+             }
+    });
+  }
+
 }
 
 function addMember() {
