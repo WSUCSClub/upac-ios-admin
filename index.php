@@ -1,9 +1,13 @@
 <?php
     $page_title = 'Raffles';
     include('header.php');
+   
     use Facebook\FacebookRequest;
     use Facebook\GraphUser;
     use Facebook\GraphObject;
+
+    use Parse\ParseObject;
+    use Parse\ParseQuery;
 ?>
 
 <ul id="events">
@@ -26,8 +30,16 @@
 
         // Check if event has a raffle
         $hasRaffle = '';
-        if ($hasRaffle != '') {
+
+        $raffleQuery = new ParseQuery('Raffle');
+        $raffleQuery->equalTo('eventId', $id);
+
+        $raffle = $raffleQuery->first();
+        var_dump($raffle);
+
+        if ($raffle != []) {
           $hasRaffle = 'hasRaffle';
+          $numContestants = sizeOf($raffle->get(entries));
         }
 ?>
 
@@ -36,7 +48,7 @@
   <div class="raffle yesRaffle">
     <div class="delete">delete</div>
     <div class="draw">draw</div>
-    <div class="contestants">3</div>
+    <div class="contestants"><?=$numContestants?></div>
   </div>
   <?php } else { ?>
     <div class="raffle noRaffle">
