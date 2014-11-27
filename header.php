@@ -11,6 +11,7 @@ include_once('parse_helper.php');
     <meta name="robots" content="noindex, nofollow" />
     <title>WSU UPAC App Administration - <?php echo $page_title; ?></title>
     <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <link rel="icon" href="favicon.png" />
     <link rel="apple-touch-icon-precomposed" href="favicon.png" />

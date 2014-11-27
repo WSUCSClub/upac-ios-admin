@@ -35,21 +35,36 @@
         $raffleQuery->equalTo('eventId', $id);
 
         $raffle = $raffleQuery->first();
-        var_dump($raffle);
+        //var_dump($raffle);
 
         if ($raffle != []) {
           $hasRaffle = 'hasRaffle';
-          $numContestants = sizeOf($raffle->get(entries));
+          $entries = $raffle->get('entries');
+          $numContestants = sizeOf($entries);
         }
 ?>
 
 <li id="<?=$id?>" class="<?=$hasRaffle?>">
   <?php if ($hasRaffle != '') { ?>
+  <!-- Place for JS to access data pulled from Parse via PHP -->
+  <div id="E<?=$id?>" style="display: none;">
+  <?php
+        if ($numContestants > 0) {
+          foreach ($entries as &$entry) {
+            echo '<span>' . $entry . '</span><br/>';
+          }
+
+          unset($entry);
+        }
+  ?>
+  </div>
+
   <div class="raffle yesRaffle">
     <div class="delete">delete</div>
-    <div class="draw">draw</div>
+    <div class="draw" onclick="drawWinners('<?=$id?>');">draw</div>
     <div class="contestants"><?=$numContestants?></div>
   </div>
+
   <?php } else { ?>
     <div class="raffle noRaffle">
       <div>create</div>
