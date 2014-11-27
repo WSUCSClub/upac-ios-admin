@@ -3,7 +3,7 @@
     include('header.php');
 ?>
 
-<h1>Login</h1>
+<h1>WSU UPAC App Administration</h1>
 
 <p>Please login.</p>
 

@@ -12,10 +12,10 @@
   <h1>Add Member</h1>
 
   <div id="form">
-    Name: <input type="text"><br/>
-    Position: <input type="text"><br/>
-    Email: <input type="text"><br/>
-    <input type="file" accept="image/*">
+    Name: <input id="name" type="text"><br/>
+    Position: <input id="position" type="text"><br/>
+    Email: <input id="email" type="text"><br/>
+    <input id="picture" type="file" accept="image/*">
   </div>
 
   <div class="green button bigButton" onclick="addMember();">Submit</div>

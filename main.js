@@ -69,7 +69,7 @@ function createRaffle(id) {
                location.reload();
              },
     error: function(result, error) {
-             alert('Failed to create new object, with error code: ' + error.message);
+             alert('Failed to create new raffle, with error code: ' + error.message);
            }
   });
 }
@@ -112,11 +112,45 @@ function deleteMember(name) {
 }
 
 function addMember() {
-  //$('#modal').toggle();
-  //$('#shade').toggle();
-  alert('adding member');
+  var name = $('#name').val();
+  var position = $('#position').val();
+  var email = $('#email').val();
+  var pictureControl = $('#picture')[0];
+
+  if (validateMember(name, position, email, pictureControl)) {
+    // add to parse
+    var Member = Parse.Object.extend("Member");
+    var member = new Member();
+    member.set("name", name);
+    member.set("position", position);
+    member.set("email", email);
+
+    var picture = pictureControl.files[0];
+    var parseFile = new Parse.File('profile_picture.jpg', picture);
+    member.set("picture", parseFile);
+
+    member.save(null, {
+      success: function(result) {
+                 location.reload();
+               },
+      error: function(result, error) {
+               alert('Failed to create new member, with error code: ' + error.message);
+             }
+    });
+  } else {
+    alert('Please fill in all the information.');
+  }
 }
 
+function validateMember(name, position, email, pictureControl) {
+  var valid = false;
+  
+  if (name != '' && position != '' && email != '' && pictureControl.files.length > 0) {
+    valid = true;
+  }
+
+  return valid;
+}
 
 
 

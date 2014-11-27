@@ -9,7 +9,7 @@ include_once('parse_helper.php');
   <head>
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow" />
-    <title>WSU UPAC App Administration - <?php echo $page_title; ?></title>
+    <title><?php echo $page_title; ?></title>
     <link rel="stylesheet" type="text/css" href="main.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//www.parsecdn.com/js/parse-1.3.2.min.js"></script>
