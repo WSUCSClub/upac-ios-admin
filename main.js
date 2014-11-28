@@ -160,7 +160,7 @@ function addMember() {
                  location.reload();
                },
       error: function(result, error) {
-               alert('Failed to create new member, with error code: ' + error.message);
+               alert('Failed to create new member: ' + error.message);
              }
     });
   } else {
@@ -196,7 +196,7 @@ function addUser() {
                  location.reload();
                },
       error: function(result, error) {
-               alert('Failed to create new member, with error code: ' + error.message);
+               alert('Failed to create new admin: ' + error.message);
              }
     });
   }
@@ -226,7 +226,16 @@ function deleteUser() {
 
 }
 
-function changePassword() {
+function resetPassword(email) {
+  Parse.User.requestPasswordReset(email, {
+    success: function() {
+      alert("Check your email to reset your password");
+    },
+    error: function(error) {
+      alert("Failed to reset password: " + error.message);
+    }
+  });
+
 }
 
 

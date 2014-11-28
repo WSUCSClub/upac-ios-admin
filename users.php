@@ -40,6 +40,7 @@
       <li>
         <?php if ($isCurrentUser) { ?>
         <div class="actions">
+          <div class="green button" onclick="resetPassword('<?=$email?>');">Reset Password</div>
           <div class="red button" onclick="deleteUser();">Delete</div>
         </div>
         <?php } ?>

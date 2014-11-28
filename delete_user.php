@@ -8,6 +8,5 @@ use Parse\ParseQuery;
 ParseUser::getCurrentUser()->destroy();
 
 header('Location: /logout.php');
-die();
 
 ?>
