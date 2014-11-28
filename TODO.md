@@ -2,12 +2,7 @@
 
 ---
 
-## UI
-* login page
-* raffle page
-* board member page
-* user admin page
+* need to delete user from separate php
+* change password
 
 
-## Miscellaneous
-* user database

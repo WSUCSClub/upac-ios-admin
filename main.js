@@ -179,37 +179,6 @@ function validateMember(name, position, email, pictureControl) {
 }
 
 
-function deleteUser(email) {
-  // Prompt for user verification
-  if (confirm('Are you sure you want to delete this user?')) {
-
-    // Delete from Parse
-    var User = Parse.Object.extend('_User');
-    var query = new Parse.Query(User);
-    query.equalTo('email', email);
-    query.first({
-
-      success: function(user) {
-                 user.destroy({
-                   success: function(result) {
-                              window.location = 'logout.php';
-                            },
-
-                   error: function(result, error) {
-                            alert('Sorry, couldn\'t delete that user.\n\n' + error);
-                          }
-                 });
-
-               },
-
-      error: function(user) {
-               alert('Sorry, couldn\'t find that user.');
-             }
-    });
-  }
-
-}
-
 function addUser() {
   var email = $('#email').val();
   var pass = $('#pass').val();
@@ -249,6 +218,16 @@ function validateUser(email, pass, confirmPass) {
   return valid;
 }
 
+function deleteUser() {
+  // Prompt for user verification
+  if (confirm('Are you sure you want to delete this user?')) {
+    window.location = 'delete_user.php';
+  }
+
+}
+
+function changePassword() {
+}
 
 
 

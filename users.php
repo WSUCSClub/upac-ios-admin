@@ -40,7 +40,7 @@
       <li>
         <?php if ($isCurrentUser) { ?>
         <div class="actions">
-          <div class="red button" onclick="deleteUser('<?=$email?>');">Delete</div>
+          <div class="red button" onclick="deleteUser();">Delete</div>
         </div>
         <?php } ?>
 
