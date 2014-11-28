@@ -133,6 +133,14 @@ main {
   text-transform: lowercase;
   color: #fff;
   cursor: pointer;
+  text-align: center;
+  width: 100%;
+  border: none;
+  font-size: 1em;
+}
+
+input.button {
+  height: 40px;
 }
 
 .button:hover {
@@ -207,14 +215,20 @@ main {
 
 
 /* Board Members */
-#modal #form {
+#form {
   margin: 30px 0px;
   text-align: right;
 }
 
-#modal #form input {
+#form input {
   margin-left: 20px;
   margin-bottom: 2px;
+}
+
+/* Login */
+#login {
+  width: 250px;
+  margin: 100px auto;
 }
 
 /* Footer */
@@ -230,5 +244,12 @@ footer {
 
 footer a {
   color: #aaa;
+}
+
+footer #logout {
+  float: right;
+  text-transform: lowercase;
+  font-weight: bold;
+  color: #fff;
 }
 

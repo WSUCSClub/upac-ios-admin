@@ -4,12 +4,13 @@
 
     use Parse\ParseObject;
     use Parse\ParseQuery;
+    use Parse\ParseUser;
 ?>
 
-<div class="green button centerButton" onclick="$('#modal').toggle();$('#shade').toggle();">Add User</div>
+<div class="green button centerButton" onclick="$('#modal').toggle();$('#shade').toggle();">Add Admin</div>
 
 <div id="modal">
-  <h1>Add User</h1>
+  <h1>Add Admin</h1>
 
   <div id="form">
     Email: <input id="email" type="text"><br/>
@@ -29,12 +30,19 @@
 
     for ($i = 0; $i < sizeOf($users); $i++) {
       $email = $users[$i]->get('email');
+
+      $isCurrentUser = false;
+      if (ParseUser::getCurrentUser()->get('email') == $email) {
+        $isCurrentUser = true;
+      }
 ?>
 
       <li>
+        <?php if ($isCurrentUser) { ?>
         <div class="actions">
           <div class="red button" onclick="deleteUser('<?=$email?>');">Delete</div>
         </div>
+        <?php } ?>
 
         <h3><?=$email?></h3>
 

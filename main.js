@@ -192,7 +192,7 @@ function deleteUser(email) {
       success: function(user) {
                  user.destroy({
                    success: function(result) {
-                              location.reload();
+                              window.location = 'logout.php';
                             },
 
                    error: function(result, error) {

@@ -8,6 +8,7 @@
 
     use Parse\ParseObject;
     use Parse\ParseQuery;
+    use Parse\ParseUser;
 ?>
 
 <div id="modal">

@@ -1,8 +1,13 @@
 <?php
-//include_once('../cgi-bin/mysql_connect.php');
-session_start();
 include_once('fb_helper.php');
 include_once('parse_helper.php');
+
+use Parse\ParseUser;
+
+if (ParseUser::getCurrentUser() == null) {
+  header('Location: /login.php');
+  die();     // bots can make it past a header redirect
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
