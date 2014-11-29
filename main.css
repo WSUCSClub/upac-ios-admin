@@ -229,6 +229,11 @@ input.button {
 #login {
   width: 250px;
   margin: 100px auto;
+  text-transform: lowercase;
+}
+
+#login h1 {
+  text-align: center;
 }
 
 /* Footer */

@@ -55,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
       <div id="login">
+        <h1>Login</h1>
         <?=$error?><br/><br/>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
           <div id="form">
