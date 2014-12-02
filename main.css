@@ -173,13 +173,24 @@ input.button {
 
 /* Login */
 #login {
-  width: 250px;
+  width: 40%;
   margin: 100px auto;
   text-transform: lowercase;
 }
 
 #login h1 {
   text-align: center;
+}
+
+#login form {
+  margin: 0;
+  padding: 0;
+}
+
+#login input {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 /* Footer */

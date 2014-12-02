@@ -1,5 +1,50 @@
-window.onload = function() {
-  //
+$(window).load(function() {
+  respondToSize();
+  loginFormHelper();
+});
+
+$(window).resize(function() {
+   respondToSize();
+});
+
+function respondToSize() {
+  // Hide nav list on mobile
+  var nav = $('nav').first();
+  var navList = nav.children('ul').first();
+  if ($(document).width() <= 640) { 
+    navList.hide();
+    nav.click(function() {
+      navList.toggle();
+    });
+  } else {
+    navList.show();
+  }
+}
+
+function loginFormHelper() {
+  $('#email').focus(function() {
+    if ($(this).val() == 'email') {
+      $(this).val('');
+    }
+  });
+
+  $('#email').focusout(function() {
+    if ($(this).val().length < 1) {
+      $(this).val('email');
+    }
+  });
+
+  $('#password').focus(function() {
+    if ($(this).val() == 'password') {
+      $(this).val('');
+    }
+  });
+
+  $('#password').focusout(function() {
+    if ($(this).val().length < 1) {
+      $(this).val('password');
+    }
+  });
 }
 
 function getEntries(id) {

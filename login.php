@@ -56,19 +56,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </header>
       <main>
 
-
       <div id="login">
         <h1>Login</h1>
         <?=$error?><br/><br/>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
           <div id="form">
-            Email: <input name="email" type="text"><br/>
-            Password: <input name="password" type="password"><br/>
+            <input id="email" name="email" value="email" type="text"><br/>
+            <input id="password" name="password" value="password" type="password"><br/>
           </div>
           <input class="green button bigButton" type="submit" value="Login">
         </form>
       </div>
-
 
       </main>
       <footer>

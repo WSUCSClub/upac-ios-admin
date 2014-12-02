@@ -199,15 +199,9 @@
     margin-bottom: 2px;
   }
 
-  /* Login */
-  #login {
-    width: 250px;
-    margin: 100px auto;
-    text-transform: lowercase;
-  }
-
-  #login h1 {
-    text-align: center;
+  #login input {
+    margin: 0;
+    padding: 0;
   }
 
   /* Footer */
