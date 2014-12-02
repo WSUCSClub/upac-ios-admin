@@ -16,6 +16,9 @@ if (ParseUser::getCurrentUser() == null) {
     <meta name="robots" content="noindex, nofollow" />
     <title><?php echo $page_title; ?></title>
     <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="small-screen.css" />
+    <link rel="stylesheet" type="text/css" href="large-screen.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//www.parsecdn.com/js/parse-1.3.2.min.js"></script>
     <script type="text/javascript" src="parse_init.js"></script>
@@ -30,7 +33,7 @@ if (ParseUser::getCurrentUser() == null) {
       <header>
         <div id="logo">
           <img src="wsu_logo.png" alt="WSU" />
-          <h1>WSU UPAC App Administration</h1>
+          <h1>WSU UPAC</h1>
         </div>
         <nav>
           <ul>

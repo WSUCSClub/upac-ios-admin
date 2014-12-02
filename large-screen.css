@@ -1,0 +1,235 @@
+@media (min-width: 640px) {
+  /* Header */
+  header {
+    width: 80%;
+    margin: 0px auto;
+    padding: 20px 10%;
+    background-color: #4b2f6a;
+  }
+
+  #logo {
+    float: left;
+  }
+
+  #logo img {
+    float: left;
+    height: 100px;
+  }
+
+  header h1 {
+    float: left;
+    margin: 50px 0px 0px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    
+  }
+
+  nav ul {
+    float: right;
+    margin-top: 60px;
+    list-style-type: none;
+  }
+
+  nav li {
+    display: inline-block;
+    padding-right: 30px;
+  }
+
+  nav li:hover {
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: lowercase;
+  }
+
+  nav a:hover {
+    //text-transform: uppercase;
+  }
+
+  /* Main */
+  main {
+    clear: both;
+  }
+
+  #mainList {
+    list-style-type: none;
+    padding: 0px;
+  }
+
+  #mainList li {
+    width: 80%;
+    padding: 20px 10%;
+    border-top: 1px dotted #333;
+  }
+
+  #mainList li:first-child {
+    border-top: none;
+  }
+
+  #mainList li:hover {
+    background-color: #ddd;
+  }
+
+  #mainList h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  #mainList h4 {
+    font-weight: normal;
+  }
+
+  #mainList img {
+    float: left;
+    margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #333;
+    border-radius: 55px;
+  }
+
+  .actions {
+    float: right;
+  }
+
+  .button {
+    height: 15px;
+    background-color: #4b4;
+    padding: 5px 10px;
+    font-weight: bold;
+    text-transform: lowercase;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    border: none;
+    font-size: 1em;
+  }
+
+  input.button {
+    height: 40px;
+  }
+
+  .button:hover {
+    background-color: #cc4;
+  }
+
+  .bigButton {
+    padding: 10px 0px;
+    margin-bottom: 5px;
+  }
+
+  .centerButton {
+    width: 300px;
+    text-align: center;
+    margin: 30px auto;
+    padding: 15px 0px;
+  }
+
+  .green{
+    background-color: #4b4;
+  }
+
+  .red {
+    background-color: #f44;
+  }
+
+  #shade {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+    opacity: 0.7;
+  }
+
+  /* Raffles */
+  #mainList li.hasRaffle {
+    background-color: #cfafef;
+  }
+
+  #mainList li.hasRaffle:hover {
+    background-color: #efcfff;
+  }
+
+  .contestants input {
+    width: 40px;
+    height: 25px;
+  }
+
+  #modal {
+    display: none;
+    z-index: 1000;
+    position: fixed;
+    left: 35%;
+    width: 300px;
+    background-color: #fff;
+    padding: 30px;
+    text-align: center;
+  }
+
+  #modal h1 {
+    text-transform: uppercase;
+  }
+
+  #modal ol {
+    margin: 30px 0px;
+  }
+
+
+  /* Board Members */
+  #form {
+    margin: 30px 0px;
+    text-align: right;
+  }
+
+  #form input {
+    margin-left: 20px;
+    margin-bottom: 2px;
+  }
+
+  /* Login */
+  #login {
+    width: 250px;
+    margin: 100px auto;
+    text-transform: lowercase;
+  }
+
+  #login h1 {
+    text-align: center;
+  }
+
+  /* Footer */
+  footer {
+    width: 80%;
+    margin: 0px auto;
+    padding: 20px 10%;
+    background-color: #4b2f6a;
+    color: #fff;
+    font-size: small;
+    text-align: center;
+  }
+
+  footer a {
+    color: #aaa;
+  }
+
+  footer #logout {
+    float: right;
+    text-transform: lowercase;
+    font-weight: bold;
+    color: #fff;
+  }
+
+}
