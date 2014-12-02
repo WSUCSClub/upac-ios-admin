@@ -173,8 +173,8 @@ input.button {
 
 /* Login */
 #login {
-  width: 40%;
-  margin: 100px auto;
+  width: 50%;
+  margin: 50px auto;
   text-transform: lowercase;
 }
 
@@ -188,6 +188,8 @@ input.button {
 }
 
 #login input {
+  -webkit-appearance: none;
+  border-radius: 0;
   margin: 0;
   padding: 0;
   width: 100%;
