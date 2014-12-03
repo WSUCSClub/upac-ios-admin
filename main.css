@@ -36,9 +36,10 @@ main {
 }
 
 #mainList li {
-  width: 80%;
-  padding: 20px 10%;
-  border-top: 1px dotted #333;
+  width: 90%;
+  padding: 10px 5%;
+  border-top: 1px solid #aaa;
+  background-color: #fff;
 }
 
 #mainList li:first-child {
@@ -49,60 +50,8 @@ main {
   background-color: #ddd;
 }
 
-#mainList h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
 #mainList h4 {
   font-weight: normal;
-}
-
-#mainList img {
-  float: left;
-  margin-right: 20px;
-  width: 100px;
-  height: 100px;
-  border: 1px solid #333;
-  border-radius: 55px;
-}
-
-.actions {
-  float: right;
-}
-
-.button {
-  height: 15px;
-  background-color: #4b4;
-  padding: 5px 10px;
-  font-weight: bold;
-  text-transform: lowercase;
-  color: #fff;
-  cursor: pointer;
-  text-align: center;
-  width: 100%;
-  border: none;
-  font-size: 1em;
-}
-
-input.button {
-  height: 40px;
-}
-
-.button:hover {
-  background-color: #cc4;
-}
-
-.bigButton {
-  padding: 10px 0px;
-  margin-bottom: 5px;
-}
-
-.centerButton {
-  width: 300px;
-  text-align: center;
-  margin: 30px auto;
-  padding: 15px 0px;
 }
 
 .green{
@@ -128,11 +77,11 @@ input.button {
 
 /* Raffles */
 #mainList li.hasRaffle {
-  background-color: #cfafef;
+  background-color: #efcfff;
 }
 
 #mainList li.hasRaffle:hover {
-  background-color: #efcfff;
+  background-color: #dbf;
 }
 
 .contestants input {
@@ -140,22 +89,22 @@ input.button {
   height: 25px;
 }
 
-#modal {
+.modal {
   display: none;
   z-index: 1000;
   position: fixed;
-  left: 35%;
-  width: 300px;
+  left: 5%;
+  width: 84%;
   background-color: #fff;
-  padding: 30px;
+  padding: 3%;
   text-align: center;
 }
 
-#modal h1 {
+.modal h1 {
   text-transform: uppercase;
 }
 
-#modal ol {
+.modal ol {
   margin: 30px 0px;
 }
 

@@ -11,13 +11,13 @@
     use Parse\ParseUser;
 ?>
 
-<div id="modal">
+<div class="modal">
   <h1>Winners</h1>
 
   <ol>
   </ol>
 
-  <div class="red button bigButton" onclick="$('#modal').toggle(); $('#shade').toggle();">Got 'em!</div>
+  <div class="red button bigButton" onclick="$('.modal').toggle(); $('#shade').toggle();">Got 'em!</div>
 </div>
 
 <ul id="mainList">
@@ -32,15 +32,18 @@
       ))->execute()->getGraphObject();
 
       for ($i = 0; $i < sizeof($events->getProperty('data')->getPropertyNames()); $i++) {
-        $id       = $events->getPropertyAsArray('data')[$i]->getProperty('id'); 
-        $name     = $events->getPropertyAsArray('data')[$i]->getProperty('name'); 
+        $id = $events->getPropertyAsArray('data')[$i]->getProperty('id'); 
+
+        $dirtyName = $events->getPropertyAsArray('data')[$i]->getProperty('name'); 
+        $name = str_replace('UPAC Presents: ', '', $dirtyName);
+
         $location = $events->getPropertyAsArray('data')[$i]->getProperty('location'); 
 
-        $date     = $events->getPropertyAsArray('data')[$i]->getProperty('start_time'); 
+        $date = $events->getPropertyAsArray('data')[$i]->getProperty('start_time'); 
         
         $timestamp = strtotime($date);
 
-        $pic      = $events->getPropertyAsArray('data')[$i]->getProperty('cover')->getProperty('source'); 
+        $pic = $events->getPropertyAsArray('data')[$i]->getProperty('cover')->getProperty('source'); 
 
         // Check if event has a raffle
         $hasRaffle = '';
@@ -57,6 +60,7 @@
 ?>
 
 <li id="<?=$id?>" class="<?=$hasRaffle?>">
+  <div class="modal">
   <?php if ($hasRaffle != '') { ?>
     <!-- Place for JS to access data pulled from Parse via PHP -->
     <div class="entries" style="display: none;">
@@ -85,10 +89,12 @@
     <div class="green button" onclick="createRaffle('<?=$id?>');">Create Raffle</div>
     </div>
   <?php } ?>
+    <div class="red button" onclick="cancelModal();">Cancel</div>
+  </div>
 
   <img src="<?=$pic?>" alt="" />
   <h3><?=$name?></h3>
-  <h4><?=$location?></h4>
+  <!--<h4><?=$location?></h4>-->
   <h4 class="date" title="<?=$timestamp?>"><?=$date?></h4>
 
   <div style="clear:both;"></div>

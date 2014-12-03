@@ -1,6 +1,8 @@
 $(window).load(function() {
   respondToSize();
   loginFormHelper();
+  hideModals();
+  initRaffles();
 });
 
 $(window).resize(function() {
@@ -19,6 +21,31 @@ function respondToSize() {
   } else {
     navList.show();
   }
+}
+
+function cancelModal() {
+  alert('test');
+  hideModals();
+  $('#shade').hide();
+}
+
+function hideModals() {
+  var modals = $(document).find('.modal');
+  modals.each(function(index) {
+    $(this).hide();
+  });
+}
+
+function initRaffles() {
+  var actions = $(document).find('.modal.actions');
+
+  var events = $('#mainList').find('li');
+  events.each(function(index) {
+    $(this).click(function() {
+      $('#shade').show();
+      $(this).find('.modal').first().show();
+    });
+  });
 }
 
 function loginFormHelper() {

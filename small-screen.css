@@ -61,6 +61,65 @@
     border-bottom: 1px solid #ccc;
   }
 
+  /* Main */
+  #mainList img {
+    float: left;
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #333;
+  }
+
+  #mainList h3 {
+    font-size: 1.0em;
+  }
+
+  #mainList h4 {
+    font-size: 0.8em;
+    color: #555;
+  }
+
+  .actions {
+    clear: both;
+    width: 100%;
+  }
+
+  .button {
+    height: 15px;
+    background-color: #4b4;
+    padding: 5px 10px;
+    font-weight: bold;
+    text-transform: lowercase;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    border: none;
+    font-size: 1em;
+  }
+
+  input.button {
+    height: 40px;
+  }
+
+  .button:hover {
+    background-color: #cc4;
+  }
+
+  .bigButton {
+    padding: 10px 0px;
+    margin-bottom: 5px;
+  }
+
+  .centerButton {
+    width: 300px;
+    text-align: center;
+    margin: 30px auto;
+    padding: 15px 0px;
+  }
+
+
+  /* Footer */
   footer.login {
     position: absolute;
     bottom: 0;
