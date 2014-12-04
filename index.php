@@ -11,13 +11,13 @@
     use Parse\ParseUser;
 ?>
 
-<div class="modal">
+<div id="winners" class="modal">
   <h1>Winners</h1>
 
   <ol>
   </ol>
 
-  <div class="red button bigButton" onclick="$('.modal').toggle(); $('#shade').toggle();">Got 'em!</div>
+  <div class="green button bigButton" onclick="$('.modal').hide();$('#winners').hide(); $('#shade').hide();">Got 'em!</div>
 </div>
 
 <ul id="mainList">
@@ -39,7 +39,8 @@
 
         $location = $events->getPropertyAsArray('data')[$i]->getProperty('location'); 
 
-        $date = $events->getPropertyAsArray('data')[$i]->getProperty('start_time'); 
+        $dirtyDate = $events->getPropertyAsArray('data')[$i]->getProperty('start_time'); 
+        $date = preg_replace('/T.*$/', '', $dirtyDate);
         
         $timestamp = strtotime($date);
 
@@ -86,10 +87,9 @@
 
   <?php } else { ?>
     <div class="actions noRaffle">
-    <div class="green button" onclick="createRaffle('<?=$id?>');">Create Raffle</div>
+      <div class="green button" onclick="createRaffle('<?=$id?>');">Create Raffle</div>
     </div>
   <?php } ?>
-    <div class="red button" onclick="cancelModal();">Cancel</div>
   </div>
 
   <img src="<?=$pic?>" alt="" />

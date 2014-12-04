@@ -6,9 +6,9 @@
     use Parse\ParseQuery;
 ?>
 
-<div class="green button centerButton" onclick="$('#modal').toggle();$('#shade').toggle();">Add Member</div>
+<div class="green button centerButton" onclick="$('#addMember').toggle();$('#shade').toggle();">Add Member</div>
 
-<div id="modal">
+<div id="addMember" class="modal">
   <h1>Add Member</h1>
 
   <div id="form">
@@ -19,7 +19,6 @@
   </div>
 
   <div class="green button bigButton" onclick="addMember();">Submit</div>
-  <div class="red button bigButton" onclick="$('#modal').toggle(); $('#shade').toggle();">Cancel</div>
 </div>
 
 
@@ -36,7 +35,7 @@
 ?>
 
       <li>
-        <div class="actions">
+        <div class="modal">
           <div class="red button" onclick="deleteMember('<?=$name?>');">Delete</div>
         </div>
 

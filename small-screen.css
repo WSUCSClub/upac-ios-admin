@@ -1,8 +1,8 @@
 @media (max-width: 640px) {
   /* Header */
   header {
-    width: 100%
-    margin: 0;
+    width: 100%;
+    margin: 0px;
     padding: 0px;
     background-color: #4b2f6a;
   }
@@ -86,16 +86,16 @@
 
   .button {
     height: 15px;
-    background-color: #4b4;
     padding: 5px 10px;
     font-weight: bold;
     text-transform: lowercase;
     color: #fff;
     cursor: pointer;
     text-align: center;
-    width: 100%;
+    width: 80%;
     border: none;
     font-size: 1em;
+    margin: 5px auto;
   }
 
   input.button {

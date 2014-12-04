@@ -7,9 +7,9 @@
     use Parse\ParseUser;
 ?>
 
-<div class="green button centerButton" onclick="$('#modal').toggle();$('#shade').toggle();">Add Admin</div>
+<div class="green button centerButton" onclick="$('#addAdmin').toggle();$('#shade').toggle();">Add Admin</div>
 
-<div id="modal">
+<div id="addAdmin" class="modal">
   <h1>Add Admin</h1>
 
   <div id="form">
@@ -19,7 +19,6 @@
   </div>
 
   <div class="green button bigButton" onclick="addUser();">Submit</div>
-  <div class="red button bigButton" onclick="$('#modal').toggle(); $('#shade').toggle();">Cancel</div>
 </div>
 
 
@@ -39,9 +38,11 @@
 
       <li>
         <?php if ($isCurrentUser) { ?>
-        <div class="actions">
-          <div class="green button" onclick="resetPassword('<?=$email?>');">Reset Password</div>
-          <div class="red button" onclick="deleteUser();">Delete</div>
+        <div class="modal">
+          <div class="actions">
+            <div class="green button" onclick="resetPassword('<?=$email?>');">Reset Password</div>
+            <div class="red button" onclick="deleteUser();">Delete</div>
+          </div>
         </div>
         <?php } ?>
 

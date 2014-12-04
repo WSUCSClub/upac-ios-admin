@@ -1,8 +1,7 @@
 $(window).load(function() {
   respondToSize();
   loginFormHelper();
-  hideModals();
-  initRaffles();
+  initList();
 });
 
 $(window).resize(function() {
@@ -23,29 +22,28 @@ function respondToSize() {
   }
 }
 
-function cancelModal() {
-  alert('test');
-  hideModals();
-  $('#shade').hide();
-}
-
-function hideModals() {
-  var modals = $(document).find('.modal');
-  modals.each(function(index) {
-    $(this).hide();
-  });
-}
-
-function initRaffles() {
-  var actions = $(document).find('.modal.actions');
-
-  var events = $('#mainList').find('li');
-  events.each(function(index) {
+function initList() {
+  var list = $('#mainList').find('li');
+  list.each(function(index) {
     $(this).click(function() {
-      $('#shade').show();
       $(this).find('.modal').first().show();
+      $('#shade').show();
     });
+
+    /*$(this).find('.cancel').first().click(function() {
+      $(this).parent().hide();
+      $('#shade').hide();
+    });*/
   });
+}
+
+function cancelModal() {
+  $('.modal').hide();
+  $(document).find('.modal').each(function(index) {
+    $(this).hide();
+    $(this).first().hide();
+  });
+  alert('test');
 }
 
 function loginFormHelper() {
@@ -77,7 +75,7 @@ function loginFormHelper() {
 function getEntries(id) {
   var entries = [];
 
-  $('#' + id).children('.entries').first().children('span').each(function() {
+  $('#' + id).find('.entries').first().children('span').each(function() {
     entries.push($(this).text());
   });
 
@@ -86,7 +84,7 @@ function getEntries(id) {
 
 function drawWinners(id) {
   var entries = getEntries(id);
-  var numWinners = $('#' + id).children('.actions').first().children('.contestants').first().children('input').first().val();
+  var numWinners = $('#' + id).find('.actions').first().children('.contestants').first().children('input').first().val();
   var winners = [];
 
   var i = 0;
@@ -112,10 +110,10 @@ function drawWinners(id) {
   }
 
   // Display winners
-  $('#modal').toggle();
-  $('#shade').toggle();
+  $('#winners').show();
+  $('#shade').show();
 
-  var list = $('#modal').children('ol').first();
+  var list = $('#winners').children('ol').first();
   list.empty();
 
   for (i = 0; i < winners.length; i++) {

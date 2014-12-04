@@ -28,7 +28,9 @@ if (ParseUser::getCurrentUser() == null) {
     <?php if (isset($miscellaneous)) echo $miscellaneous; ?>
   </head>
   <body>
-    <div id="shade"></div>
+    <div id="shade">
+      <div id="cancel" class="button red" onclick="$('#shade').hide();$('.modal').hide();">Cancel</div>
+    </div>
     <div id="container">
       <header>
         <div id="logo">
