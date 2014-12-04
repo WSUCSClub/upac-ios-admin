@@ -12,7 +12,8 @@ function respondToSize() {
   // Hide nav list on mobile
   var nav = $('nav').first();
   var navList = nav.children('ul').first();
-  if ($(document).width() <= 640) { 
+  //if ($(document).width() <= 640) { 
+  if ($(document).width() > 0) { 
     navList.hide();
     nav.click(function() {
       navList.toggle();

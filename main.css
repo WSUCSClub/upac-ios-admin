@@ -130,7 +130,7 @@ main {
 }
 
 #form input {
-  margin-left: 20px;
+  margin-left: 10px;
   margin-bottom: 2px;
 }
 
@@ -156,6 +156,10 @@ main {
   margin: 0;
   padding: 0;
   width: 100%;
+}
+
+#login .bigButton {
+  margin-top: 15px;
 }
 
 /* Footer */

@@ -13,9 +13,9 @@
   <h1>Add Admin</h1>
 
   <div id="form">
-    Email: <input id="email" type="text"><br/>
-    Password: <input id="pass" type="password"><br/>
-    Confirm Password: <input id="confirmPass" type="password"><br/>
+    Email:<input id="email" type="text"><br/>
+    Password:<input id="pass" type="password"><br/>
+    Confirm:<input id="confirmPass" type="password"><br/>
   </div>
 
   <div class="green button bigButton" onclick="addUser();">Submit</div>

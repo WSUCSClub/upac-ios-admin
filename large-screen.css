@@ -1,4 +1,5 @@
-@media (min-width: 640px) {
+/*@media (min-width: 640px) {*/
+@media (max-width: 10px) {
   /* Header */
   header {
     width: 80%;
