@@ -301,6 +301,7 @@ function resetPassword(email) {
   Parse.User.requestPasswordReset(email, {
     success: function() {
       alert("Check your email to reset your password");
+      location.reload();
     },
     error: function(error) {
       alert("Failed to reset password: " + error.message);
